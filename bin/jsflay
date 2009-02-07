@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require "rubygems"
+require File.expand_path(File.join(File.dirname(__FILE__), "..", "lib", "js_flay"))
+
+js_flay = JSFlay.new
+js_flay.process_files(*ARGV)
+js_flay.report
