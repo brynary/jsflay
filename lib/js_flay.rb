@@ -57,7 +57,7 @@ class JSFlay
   end
   
   def process(js, filename = nil)
-    puts "Processing: #{filename}" if @verbose
+    puts "Processing #{filename}..." if @verbose
     sexp = Johnson.parse(js, filename)
     
     sexp.each do |node|
@@ -103,7 +103,7 @@ class JSFlay
     str = ""
     str << "\nMatches found (mass = #{mass})\n"
     duplicate.each do |dupe|
-      str << "    #{dupe.filename}:#{dupe.line}\n"
+      str << "  #{dupe.filename}:#{dupe.line}\n"
     end
     return str
   end
