@@ -1,7 +1,7 @@
 require "rubygems"
 require "spec"
 
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "lib", "js_flay"))
+require File.expand_path(File.join(File.dirname(__FILE__), "..", "lib", "jsflay"))
 
 describe "jsflay" do
   def sexp(js)

@@ -1,10 +1,10 @@
 require "johnson"
 
 class Array
-  def syms
-    symed = map do |a|
-      if a.respond_to?(:syms)
-        a.syms
+  def only_symbols
+    symbols = map do |a|
+      if a.respond_to?(:only_symbols)
+        a.only_symbols
       elsif a.is_a?(Symbol)
         a
       else
@@ -12,8 +12,8 @@ class Array
       end
     end.compact
     
-    return nil if symed.empty?
-    symed
+    return nil if symbols.empty?
+    symbols
   end
 end
 
@@ -25,7 +25,7 @@ Johnson::Nodes::Node.class_eval do
   end
   
   def structure
-    to_sexp.syms
+    to_sexp.only_symbols
   end
   
   def fuzzy_hash
@@ -42,6 +42,8 @@ Johnson::Nodes::Node.class_eval do
 end
 
 class JSFlay
+  VERSION = "0.1.0"
+  
   attr_reader :hashes
   
   def initialize(mass = 20, verbose = true)
@@ -68,6 +70,7 @@ class JSFlay
   end
   
   def prune
+    # Delete nodes with no duplicates
     @hashes.delete_if { |_, nodes| nodes.size == 1 }
     
     # extract all subtree hashes from all nodes
