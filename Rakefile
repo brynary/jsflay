@@ -17,7 +17,7 @@ spec = Gem::Specification.new do |s|
   s.bindir       = "bin"
   s.description  = s.summary
   s.require_path = "lib"
-  s.files        = %w(History.txt MIT-LICENSE.txt README.rdoc Rakefile) + Dir["lib/**/*"]
+  s.files        = %w(History.txt MIT-LICENSE.txt README.rdoc Rakefile) + Dir["bin/*"] + Dir["lib/**/*"]
 
   # Dependencies
   s.add_dependency "johnson", ">= 1.0.0"
