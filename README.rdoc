@@ -1,0 +1,50 @@
+= jsflay
+
+- http://brynary.com/
+- http://github.com/brynary/jsflay
+
+== Description
+
+jsflay analyzes JavaScript code for structural simularities. Differences in 
+literal values, variable names, whitespace, formatting, semicolons, etc are
+all ignored. Making this totally rad.
+
+jsflay is heavily based on the outstanding work of Ryan Davis and Seattle.rb
+in creating flay (http://ruby.sadi.st/, http://rubyforge.org/projects/seattlerb).
+
+== Features
+
+* Differences in literal values, variable, class, and method names are ignored.
+* Differences in whitespace, programming style, braces, etc are ignored.
+* Works across files.
+* Reports differences at any level of code.
+
+== Example
+
+  $ jsflay public/javascripts/jquery.highlightFade.js
+  Processing public/javascripts/jquery.highlightFade.js...
+
+  Matches found (mass = 111)
+    public/javascripts/jquery.highlightFade.js:77
+    public/javascripts/jquery.highlightFade.js:78
+    public/javascripts/jquery.highlightFade.js:79
+
+== Requirements
+
+* Johnson (sudo gem install johnson)
+
+== Install
+
+For now, download the source. Add the jsflay/bin directory to your $PATH.
+
+Gem will be coming soon.
+
+== Authors
+
+* Maintained by {Bryan Helmkamp}[mailto:bryan@brynary.com]
+* Based on Flay by {Ryan Davis}[http://rubyforge.org/projects/seattlerb] and
+  Seattle.rb[http://ruby.sadi.st/]
+
+== License
+
+See MIT-LICENSE.txt in this directory.
