@@ -35,9 +35,11 @@ in creating flay (http://ruby.sadi.st/, http://rubyforge.org/projects/seattlerb)
 
 == Install
 
-For now, download the source. Add the jsflay/bin directory to your $PATH.
+Download the source. Run:
 
-Gem will be coming soon.
+  rake install_gem
+  
+An official gem published to RubyForge will be coming soon.
 
 == Authors
 
